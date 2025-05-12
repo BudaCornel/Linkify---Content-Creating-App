@@ -1,0 +1,66 @@
+version: '3.9'
+
+networks:
+  dev:
+    driver: bridge
+
+services:
+  flux-ai-imagegen:
+    build:
+      context: ./flux-ai-imagegen/flux-ai-imagegen
+      dockerfile: Dockerfile
+    container_name: services
+    ports:
+      - "8081:80" 
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - dev
+
+  mylumaapp:
+    build:
+      context: ./mylumaapp/mylumaapp
+      dockerfile: Dockerfile
+    container_name: mylumaapp
+    ports:
+      - "8082:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - dev
+
+  description:
+    build:
+      context: ./description/description
+      dockerfile: Dockerfile
+    container_name: description
+    ports:
+      - "8083:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - dev
+
+  static-page:
+    image: nginx:latest
+    container_name: static-page
+    ports:
+      - "8084:80"
+    volumes:
+      - ./finexo-html/finexo-html:/usr/share/nginx/html:ro 
+    networks:
+      - dev
+
+  nginx:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy
+    restart: unless-stopped
+    ports:
+      - '40080:80'
+      - '40443:443'
+      - '40081:81'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    networks:
+      - dev

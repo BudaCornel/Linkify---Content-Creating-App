@@ -1,0 +1,33 @@
+﻿@model MyLumaApp.Models.GenerationStatusResponseModel
+@{
+    ViewData["Title"] = "Your Generated Video";
+}
+
+<div class="text-center">
+    <h2 class="mb-4 display-5 fw-bold"><i class="fas fa-film"></i> Your Generated Video</h2>
+
+    @if (!string.IsNullOrEmpty(Model.Assets?.Video))
+    {
+        <div class="mb-4 p-3 bg-white border rounded shadow-sm mx-auto" style="max-width: 700px;">
+            <video class="w-100 border border-secondary rounded" controls>
+                <source src="@Model.Assets.Video" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="alert alert-success fs-6 d-inline-block shadow-sm">
+            <i class="fas fa-check-circle"></i> Your AI-generated video is ready!
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning fs-6 d-inline-block shadow-sm">
+            <i class="fas fa-exclamation-circle"></i> Video not available.
+        </div>
+    }
+
+    <div class="mt-5">
+        <a href="/" class="btn btn-dark btn-lg">
+            <i class="fas fa-home"></i> Back to Home
+        </a>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-header {
+    border-bottom: none;
+}
+
+input.form-control-lg {
+    border-radius: 0.3rem;
+}
+
+.btn {
+    border-radius: 0.3rem;
+}

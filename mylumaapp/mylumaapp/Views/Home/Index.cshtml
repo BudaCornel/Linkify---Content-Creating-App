@@ -1,0 +1,64 @@
+﻿@model MyLumaApp.Models.GenerationRequestModel
+@{
+    ViewData["Title"] = "Generate AI Video";
+}
+
+<div class="p-5 mb-5 bg-white rounded-3 shadow-sm">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">Create Your AI-Generated Video</h1>
+        <p class="lead fs-5 mt-3 mb-4 text-muted">
+            Turn a simple prompt and an image into a dynamic, AI-generated video.
+        </p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-info text-center fs-6">
+                <i class="fas fa-info-circle"></i> @ViewBag.Message
+            </div>
+        }
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger text-center fs-6">
+                <i class="fas fa-exclamation-triangle"></i> @ViewBag.Error
+            </div>
+        }
+
+        <div class="card border-0 shadow">
+            <div class="card-header bg-dark text-light text-center fs-5">
+                <i class="fas fa-magic"></i> Start Generation
+            </div>
+            <div class="card-body bg-white">
+                <form asp-action="CreateVideo" method="post" class="mb-4">
+                    <div class="mb-3">
+                        <label for="Prompt" class="form-label fw-semibold">Prompt</label>
+                        <input type="text" id="Prompt" name="Prompt" class="form-control form-control-lg" value="@Model?.Prompt" placeholder="e.g. A majestic tiger in a snowy landscape" />
+                        <small class="text-muted">Describe the scene or concept you wish to visualize.</small>
+                    </div>
+                    <div class="mb-4">
+                        <label for="ImageUrl" class="form-label fw-semibold">Image URL</label>
+                        <input type="text" id="ImageUrl" name="ImageUrl" class="form-control form-control-lg" value="@Model?.ImageUrl" placeholder="https://example.com/image.jpg" />
+                        <small class="text-muted">Provide a publicly accessible image to guide the first frame.</small>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg w-100">
+                        <i class="fas fa-play-circle"></i> Create Video
+                    </button>
+                </form>
+
+                <form asp-action="CheckStatus" method="post">
+                    <button type="submit" class="btn btn-secondary btn-lg w-100">
+                        <i class="fas fa-sync-alt"></i> Check Status
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center text-muted mt-4 fs-6">
+            <small>Your video may take a few moments to process. Once it’s ready, click "Check Status" to view it.</small>
+        </div>
+    </div>
+</div>

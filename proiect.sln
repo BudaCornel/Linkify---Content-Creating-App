@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "description", "description", "{71AE6A5F-8948-422A-B16A-5F3C3F9F95C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "description", "description\description\description.csproj", "{60DD7C4C-B770-4BBC-B0E5-7070E7E17427}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "flux-ai-imagegen", "flux-ai-imagegen", "{1E16B6CA-3DFE-4B1E-B08A-A8BE76A6E054}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "flux-ai-imagegen", "flux-ai-imagegen\flux-ai-imagegen\flux-ai-imagegen.csproj", "{B9FD6CBE-1575-427F-B852-2732A0DBEC02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mylumaapp", "mylumaapp", "{99DA164E-94CA-4FB1-9299-21E62BB2EDB5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLumaApp", "mylumaapp\mylumaapp\MyLumaApp.csproj", "{5ACB0AB0-1F16-4511-A0FD-E67B2C953029}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60DD7C4C-B770-4BBC-B0E5-7070E7E17427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60DD7C4C-B770-4BBC-B0E5-7070E7E17427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60DD7C4C-B770-4BBC-B0E5-7070E7E17427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60DD7C4C-B770-4BBC-B0E5-7070E7E17427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9FD6CBE-1575-427F-B852-2732A0DBEC02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9FD6CBE-1575-427F-B852-2732A0DBEC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9FD6CBE-1575-427F-B852-2732A0DBEC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9FD6CBE-1575-427F-B852-2732A0DBEC02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACB0AB0-1F16-4511-A0FD-E67B2C953029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACB0AB0-1F16-4511-A0FD-E67B2C953029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACB0AB0-1F16-4511-A0FD-E67B2C953029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACB0AB0-1F16-4511-A0FD-E67B2C953029}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{60DD7C4C-B770-4BBC-B0E5-7070E7E17427} = {71AE6A5F-8948-422A-B16A-5F3C3F9F95C1}
+		{B9FD6CBE-1575-427F-B852-2732A0DBEC02} = {1E16B6CA-3DFE-4B1E-B08A-A8BE76A6E054}
+		{5ACB0AB0-1F16-4511-A0FD-E67B2C953029} = {99DA164E-94CA-4FB1-9299-21E62BB2EDB5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE6ABA44-C9A1-4AD6-AFA8-ED7F960CFA67}
+	EndGlobalSection
+EndGlobal
