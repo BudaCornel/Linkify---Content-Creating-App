@@ -3,6 +3,18 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+
+appsettings.json
+appsettings.*.json
+
+# Any   appsettings.json   in any sub‑folder
+**/appsettings.json
+**/appsettings.*.json
+
+# Build output – ignore everywhere
+**/bin/
+**/obj/
+
 # dotenv files
 .env
 
